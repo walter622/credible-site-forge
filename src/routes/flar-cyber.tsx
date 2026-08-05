@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CloudLock, Radar, ScanSearch, ShieldAlert } from "lucide-react";
+import { Radar, ScanSearch, ShieldAlert, ShieldCheck } from "lucide-react";
 import { SolutionPage } from "@/components/site/SolutionPage";
 
 export const Route = createFileRoute("/flar-cyber")({
@@ -56,7 +56,7 @@ function Page() {
             "Monitoramento e resposta a incidentes com apoio de Inteligência Artificial para conter ameaças com agilidade.",
         },
         {
-          icon: CloudLock,
+          icon: ShieldCheck,
           title: "Segurança em Nuvem e Dispositivos Finais",
           description:
             "Proteção para infraestruturas de nuvem pública, híbrida e ambientes de trabalho corporativos, garantindo controle rígido de acessos.",
