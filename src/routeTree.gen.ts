@@ -10,33 +10,80 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ErpOracleRouteImport } from './routes/erp-oracle'
+import { Route as ErpSapRouteImport } from './routes/erp-sap'
+import { Route as HiperautomacaoRouteImport } from './routes/hiperautomacao'
+import { Route as SalesforceRouteImport } from './routes/salesforce'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ErpOracleRoute = ErpOracleRouteImport.update({
+  id: '/erp-oracle',
+  path: '/erp-oracle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErpSapRoute = ErpSapRouteImport.update({
+  id: '/erp-sap',
+  path: '/erp-sap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HiperautomacaoRoute = HiperautomacaoRouteImport.update({
+  id: '/hiperautomacao',
+  path: '/hiperautomacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SalesforceRoute = SalesforceRouteImport.update({
+  id: '/salesforce',
+  path: '/salesforce',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/salesforce': typeof SalesforceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/salesforce': typeof SalesforceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/salesforce': typeof SalesforceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/erp-oracle' | '/erp-sap' | '/hiperautomacao' | '/salesforce'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/erp-oracle' | '/erp-sap' | '/hiperautomacao' | '/salesforce'
+  id:
+    | '__root__'
+    | '/'
+    | '/erp-oracle'
+    | '/erp-sap'
+    | '/hiperautomacao'
+    | '/salesforce'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ErpOracleRoute: typeof ErpOracleRoute
+  ErpSapRoute: typeof ErpSapRoute
+  HiperautomacaoRoute: typeof HiperautomacaoRoute
+  SalesforceRoute: typeof SalesforceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +95,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/erp-oracle': {
+      id: '/erp-oracle'
+      path: '/erp-oracle'
+      fullPath: '/erp-oracle'
+      preLoaderRoute: typeof ErpOracleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/erp-sap': {
+      id: '/erp-sap'
+      path: '/erp-sap'
+      fullPath: '/erp-sap'
+      preLoaderRoute: typeof ErpSapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hiperautomacao': {
+      id: '/hiperautomacao'
+      path: '/hiperautomacao'
+      fullPath: '/hiperautomacao'
+      preLoaderRoute: typeof HiperautomacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/salesforce': {
+      id: '/salesforce'
+      path: '/salesforce'
+      fullPath: '/salesforce'
+      preLoaderRoute: typeof SalesforceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ErpOracleRoute: ErpOracleRoute,
+  ErpSapRoute: ErpSapRoute,
+  HiperautomacaoRoute: HiperautomacaoRoute,
+  SalesforceRoute: SalesforceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
