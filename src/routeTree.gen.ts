@@ -10,33 +10,207 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as CasosDeSucessoRouteImport } from './routes/casos-de-sucesso'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ErpOracleRouteImport } from './routes/erp-oracle'
+import { Route as ErpSapRouteImport } from './routes/erp-sap'
+import { Route as FlarCyberRouteImport } from './routes/flar-cyber'
+import { Route as GovernancaEFiscalRouteImport } from './routes/governanca-e-fiscal'
+import { Route as HiperautomacaoRouteImport } from './routes/hiperautomacao'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as SalesforceRouteImport } from './routes/salesforce'
+import { Route as TalentosEDesenvolvimentoRouteImport } from './routes/talentos-e-desenvolvimento'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasosDeSucessoRoute = CasosDeSucessoRouteImport.update({
+  id: '/casos-de-sucesso',
+  path: '/casos-de-sucesso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErpOracleRoute = ErpOracleRouteImport.update({
+  id: '/erp-oracle',
+  path: '/erp-oracle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErpSapRoute = ErpSapRouteImport.update({
+  id: '/erp-sap',
+  path: '/erp-sap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlarCyberRoute = FlarCyberRouteImport.update({
+  id: '/flar-cyber',
+  path: '/flar-cyber',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovernancaEFiscalRoute = GovernancaEFiscalRouteImport.update({
+  id: '/governanca-e-fiscal',
+  path: '/governanca-e-fiscal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HiperautomacaoRoute = HiperautomacaoRouteImport.update({
+  id: '/hiperautomacao',
+  path: '/hiperautomacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SalesforceRoute = SalesforceRouteImport.update({
+  id: '/salesforce',
+  path: '/salesforce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TalentosEDesenvolvimentoRoute =
+  TalentosEDesenvolvimentoRouteImport.update({
+    id: '/talentos-e-desenvolvimento',
+    path: '/talentos-e-desenvolvimento',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
+  '/casos-de-sucesso': typeof CasosDeSucessoRoute
+  '/contato': typeof ContatoRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/flar-cyber': typeof FlarCyberRoute
+  '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/salesforce': typeof SalesforceRoute
+  '/talentos-e-desenvolvimento': typeof TalentosEDesenvolvimentoRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
+  '/casos-de-sucesso': typeof CasosDeSucessoRoute
+  '/contato': typeof ContatoRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/flar-cyber': typeof FlarCyberRoute
+  '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/salesforce': typeof SalesforceRoute
+  '/talentos-e-desenvolvimento': typeof TalentosEDesenvolvimentoRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog': typeof BlogRoute
+  '/casos-de-sucesso': typeof CasosDeSucessoRoute
+  '/contato': typeof ContatoRoute
+  '/erp-oracle': typeof ErpOracleRoute
+  '/erp-sap': typeof ErpSapRoute
+  '/flar-cyber': typeof FlarCyberRoute
+  '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
+  '/hiperautomacao': typeof HiperautomacaoRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/salesforce': typeof SalesforceRoute
+  '/talentos-e-desenvolvimento': typeof TalentosEDesenvolvimentoRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blog'
+    | '/casos-de-sucesso'
+    | '/contato'
+    | '/erp-oracle'
+    | '/erp-sap'
+    | '/flar-cyber'
+    | '/governanca-e-fiscal'
+    | '/hiperautomacao'
+    | '/politica-de-privacidade'
+    | '/quem-somos'
+    | '/salesforce'
+    | '/talentos-e-desenvolvimento'
+    | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blog'
+    | '/casos-de-sucesso'
+    | '/contato'
+    | '/erp-oracle'
+    | '/erp-sap'
+    | '/flar-cyber'
+    | '/governanca-e-fiscal'
+    | '/hiperautomacao'
+    | '/politica-de-privacidade'
+    | '/quem-somos'
+    | '/salesforce'
+    | '/talentos-e-desenvolvimento'
+    | '/termos-de-uso'
+  id:
+    | '__root__'
+    | '/'
+    | '/blog'
+    | '/casos-de-sucesso'
+    | '/contato'
+    | '/erp-oracle'
+    | '/erp-sap'
+    | '/flar-cyber'
+    | '/governanca-e-fiscal'
+    | '/hiperautomacao'
+    | '/politica-de-privacidade'
+    | '/quem-somos'
+    | '/salesforce'
+    | '/talentos-e-desenvolvimento'
+    | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogRoute: typeof BlogRoute
+  CasosDeSucessoRoute: typeof CasosDeSucessoRoute
+  ContatoRoute: typeof ContatoRoute
+  ErpOracleRoute: typeof ErpOracleRoute
+  ErpSapRoute: typeof ErpSapRoute
+  FlarCyberRoute: typeof FlarCyberRoute
+  GovernancaEFiscalRoute: typeof GovernancaEFiscalRoute
+  HiperautomacaoRoute: typeof HiperautomacaoRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  QuemSomosRoute: typeof QuemSomosRoute
+  SalesforceRoute: typeof SalesforceRoute
+  TalentosEDesenvolvimentoRoute: typeof TalentosEDesenvolvimentoRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +222,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/casos-de-sucesso': {
+      id: '/casos-de-sucesso'
+      path: '/casos-de-sucesso'
+      fullPath: '/casos-de-sucesso'
+      preLoaderRoute: typeof CasosDeSucessoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/erp-oracle': {
+      id: '/erp-oracle'
+      path: '/erp-oracle'
+      fullPath: '/erp-oracle'
+      preLoaderRoute: typeof ErpOracleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/erp-sap': {
+      id: '/erp-sap'
+      path: '/erp-sap'
+      fullPath: '/erp-sap'
+      preLoaderRoute: typeof ErpSapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flar-cyber': {
+      id: '/flar-cyber'
+      path: '/flar-cyber'
+      fullPath: '/flar-cyber'
+      preLoaderRoute: typeof FlarCyberRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/governanca-e-fiscal': {
+      id: '/governanca-e-fiscal'
+      path: '/governanca-e-fiscal'
+      fullPath: '/governanca-e-fiscal'
+      preLoaderRoute: typeof GovernancaEFiscalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hiperautomacao': {
+      id: '/hiperautomacao'
+      path: '/hiperautomacao'
+      fullPath: '/hiperautomacao'
+      preLoaderRoute: typeof HiperautomacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/salesforce': {
+      id: '/salesforce'
+      path: '/salesforce'
+      fullPath: '/salesforce'
+      preLoaderRoute: typeof SalesforceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/talentos-e-desenvolvimento': {
+      id: '/talentos-e-desenvolvimento'
+      path: '/talentos-e-desenvolvimento'
+      fullPath: '/talentos-e-desenvolvimento'
+      preLoaderRoute: typeof TalentosEDesenvolvimentoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogRoute: BlogRoute,
+  CasosDeSucessoRoute: CasosDeSucessoRoute,
+  ContatoRoute: ContatoRoute,
+  ErpOracleRoute: ErpOracleRoute,
+  ErpSapRoute: ErpSapRoute,
+  FlarCyberRoute: FlarCyberRoute,
+  GovernancaEFiscalRoute: GovernancaEFiscalRoute,
+  HiperautomacaoRoute: HiperautomacaoRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  QuemSomosRoute: QuemSomosRoute,
+  SalesforceRoute: SalesforceRoute,
+  TalentosEDesenvolvimentoRoute: TalentosEDesenvolvimentoRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
