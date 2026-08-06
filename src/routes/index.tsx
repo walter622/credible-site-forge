@@ -174,7 +174,7 @@ function Home() {
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
               >
                 Solicitar Assessoria Gratuita de 1 Hora
-              </Link>
+              </a>
             </div>
             <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
               24+ Anos de Mercado • +6.100 Projetos Entregues • +250 Clientes Atendidos • Parceira
