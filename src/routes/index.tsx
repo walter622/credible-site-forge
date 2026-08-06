@@ -12,7 +12,7 @@ import {
 import { ExecutiveForm } from "@/components/site/ExecutiveForm";
 import { SmartLink } from "@/components/site/SmartLink";
 import { institutionalStats, cases } from "@/data/site";
-import { Partners } from "@/components/site/Partners";
+import { Partners, PartnerMarquee } from "@/components/site/Partners";
 
 
 export const Route = createFileRoute("/")({
