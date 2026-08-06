@@ -69,35 +69,63 @@ export const institutionalStats = [
   { value: "Anthropic", label: "Parceira oficial · Claude Partner Network (CCAF)" },
 ];
 
-export const cases = [
+import gol from "@/assets/clients/gol.asset.json";
+import senac from "@/assets/clients/senac.asset.json";
+import motz from "@/assets/clients/motz.asset.json";
+import deloitteClient from "@/assets/clients/deloitte-client.asset.json";
+import automationHub from "@/assets/clients/automation-hub.asset.json";
+import timbro from "@/assets/clients/timbro.asset.json";
+
+export type CaseItem = {
+  client: string;
+  logo: string;
+  category: string;
+  title: string;
+  text: string;
+};
+
+export const cases: CaseItem[] = [
   {
-    category: "ERPs & Plataformas",
-    title: "Otimização e Evolução de ERP Corporativo",
-    challenge:
-      "Necessidade de modernização do ambiente ERP com foco em estabilidade e mantendo a operação em funcionamento contínuo.",
-    action:
-      "Planejamento arquitetural, otimização de banco de dados e execução coordenada por fases.",
-    result:
-      "Estabilidade de sistemas, aumento de desempenho e melhoria na rotina de fechamento contábil.",
+    client: "GOL",
+    logo: gol.url,
+    category: "BU – Inovação",
+    title: "Automação para Balanceamento de Passageiros em Aeronaves",
+    text: "Automatizamos o balanceamento de passageiros em aeronaves com RPA e IA, otimizando cálculos e relatórios. A solução aumentou a eficiência em 85%, reduziu 24 FTEs e melhorou a segurança e pontualidade dos voos. O resultado foi uma operação mais precisa, ágil e econômica.",
   },
   {
-    category: "Flar Cyber",
-    title: "Proteção de Perímetro e Integrações Digitais",
-    challenge:
-      "Identificação e correção de riscos em interfaces de programação (APIs) e conectividade externa.",
-    action:
-      "Diagnóstico com a plataforma Flar Cyber, mapeamento da superfície de ataque externa e aplicação de camadas de proteção.",
-    result:
-      "Proteção ativa do ambiente externo e garantia de continuidade operacional nas integrações.",
+    client: "Senac",
+    logo: senac.url,
+    category: "BU – APPS",
+    title: "AMS Oracle EBS e Synchro – Sustentação e Projetos em 88 filiais",
+    text: "Com uma equipe especializada de 13 consultores Oracle e Synchro, enfrentamos um backlog de 600 chamados com 1.400 horas de baseline. Em 5 meses, reduzimos mais de 50% dos chamados e zeramos os do ano corrente. Ao final do primeiro ano, eliminamos o backlog com 98% de aprovação dos usuários.",
   },
   {
-    category: "Hiperautomação & IA",
-    title: "Automação Inteligente de Processos Administrativos",
-    challenge:
-      "Alto volume de tarefas manuais de digitação e validação de documentos fiscais e operacionais.",
-    action:
-      "Implantação de solução de Hiperautomação (RPA + Inteligência Artificial) conectada ao ERP.",
-    result:
-      "Redução drástica do tempo de processamento de documentos e eliminação de erros manuais.",
+    client: "Motz",
+    logo: motz.url,
+    category: "BU – Fábrica de Tecnologias",
+    title: "SQUADS Multidisciplinar",
+    text: "Estruturamos SQUADS de alto nível de expertise em até 10 dias, com flexibilidade para ajustar perfis conforme a demanda. Essa agilidade viabilizou mais de 40 projetos de média e alta complexidade, acelerando a escalabilidade dos nossos produtos, receitas e valor de mercado.",
+  },
+  {
+    client: "Deloitte",
+    logo: deloitteClient.url,
+    category: "BU – Inovação",
+    title: "Alocação de Recursos Especialistas",
+    text: "Em parceria com a Deloitte há mais de 20 anos, alocamos mais de 200 especialistas em projetos estratégicos. Atuamos com consultores SAP, Sychro, Oracle, Microsoft e Thomson Reuters. Uma colaboração sólida que impulsiona resultados em diversas frentes.",
+  },
+  {
+    client: "Automation Hub",
+    logo: automationHub.url,
+    category: "Soluções Flar",
+    title: "O Produto da FLAR que Virou Referência no Brasil",
+    text: "Empresas com processos manuais e ineficientes transformaram suas operações com o Automation Hub da FLAR Consulting. A solução automatiza a gestão de contas e documentos com zero intervenção humana, reduzindo mais de 90% do esforço manual e eliminando erros. Com resultados imediatos, tornou-se um divisor de águas em eficiência e controle.",
+  },
+  {
+    client: "Timbro",
+    logo: timbro.url,
+    category: "BU – Inovação",
+    title: "Automação para Desembaraço Aduaneiro",
+    text: "Automatizamos a análise de documentos de desembaraço aduaneiro com IA e RPA, reduzindo erros e atrasos em operações de comércio exterior. A solução aumentou a eficiência em 65% e eliminou 4 FTEs. Resultado: mais agilidade, precisão e economia no processo.",
   },
 ];
+

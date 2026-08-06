@@ -26,7 +26,14 @@ export const Route = createFileRoute("/casos-de-sucesso")({
   component: Page,
 });
 
-const filters = ["Todos", "ERPs & Plataformas", "Hiperautomação & IA", "Flar Cyber", "Talentos"];
+const filters = [
+  "Todos",
+  "BU – Inovação",
+  "BU – APPS",
+  "BU – Fábrica de Tecnologias",
+  "Soluções Flar",
+];
+
 
 function Page() {
   const [active, setActive] = useState("Todos");
@@ -76,27 +83,24 @@ function Page() {
           {visible.map((item) => (
             <article
               key={item.title}
-              className="flex flex-col rounded-2xl border border-border bg-surface p-7"
+              className="flex flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-primary/50"
             >
-              <span className="w-fit rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <span className="flex h-14 w-32 items-center justify-center rounded-xl bg-white p-3">
+                <img
+                  src={item.logo}
+                  alt={`Logo ${item.client}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-8 w-auto max-w-[6.5rem] object-contain"
+                />
+              </span>
+              <span className="mt-5 w-fit rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                 {item.category}
               </span>
-              <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-              <dl className="mt-5 space-y-4 text-sm leading-relaxed">
-                <div>
-                  <dt className="font-semibold text-foreground">O desafio</dt>
-                  <dd className="mt-1 text-muted-foreground">{item.challenge}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-foreground">A atuação Flar</dt>
-                  <dd className="mt-1 text-muted-foreground">{item.action}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-primary">O resultado</dt>
-                  <dd className="mt-1 text-muted-foreground">{item.result}</dd>
-                </div>
-              </dl>
+              <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
             </article>
+
           ))}
         </div>
 
