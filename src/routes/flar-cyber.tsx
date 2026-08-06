@@ -1,28 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Radar, ScanSearch, ShieldAlert, ShieldCheck } from "lucide-react";
-import { SolutionPage } from "@/components/site/SolutionPage";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/flar-cyber")({
-  head: () => ({
-    meta: [
-      { title: "Flar Cyber: Cibersegurança Estratégica Corporativa | Flar Consulting" },
-      {
-        name: "description",
-        content:
-          "Gestão de vulnerabilidades, segurança em nuvem, proteção de APIs e SecOps com IA. Solicite a assessoria gratuita de 1 hora.",
-      },
-      { property: "og:title", content: "Flar Cyber: Proteção do Código à Nuvem" },
-      {
-        property: "og:description",
-        content: "Proteja a continuidade operacional, os dados e a reputação do seu negócio.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/flar-cyber" },
-    ],
-    links: [{ rel: "canonical", href: "/flar-cyber" }],
-  }),
-  component: Page,
+  beforeLoad: () => {
+    throw redirect({ href: "https://lp.flar.com.br/" });
+  },
+  component: () => null,
 });
+
 
 function Page() {
   return (
