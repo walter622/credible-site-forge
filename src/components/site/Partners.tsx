@@ -147,7 +147,7 @@ export function Partners() {
 }
 
 export function PartnerMarquee() {
-  const loop = [...partners, ...clients, ...partners, ...clients];
+  const loop = [...clients, ...clients, ...clients, ...clients];
   return (
     <div className="overflow-hidden" aria-hidden="true">
       <div className="animate-marquee flex w-max gap-4 pr-4">
