@@ -49,7 +49,6 @@ export const partners: Partner[] = [
   { name: "Cequence", url: cequence.url, tone: "light" },
 ];
 
-import anthropicBadge from "@/assets/partners/anthropic-badge.asset.json";
 import automationHub from "@/assets/clients/automation-hub.asset.json";
 import timbro from "@/assets/clients/timbro.asset.json";
 import motz from "@/assets/clients/motz.asset.json";
