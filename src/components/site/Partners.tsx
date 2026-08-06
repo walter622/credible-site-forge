@@ -99,3 +99,29 @@ export function Partners() {
     </section>
   );
 }
+
+export function PartnerMarquee() {
+  const loop = [...partners, ...partners];
+  return (
+    <div className="overflow-hidden" aria-hidden="true">
+      <div className="animate-marquee flex w-max gap-4 pr-4">
+        {loop.map((partner, i) => (
+          <span
+            key={`${partner.name}-${i}`}
+            className={`flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border p-4 ${
+              partner.tone === "light" ? "bg-surface-2" : "bg-white"
+            }`}
+          >
+            <img
+              src={partner.url}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="max-h-9 w-auto max-w-[7.5rem] object-contain"
+            />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
