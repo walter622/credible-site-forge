@@ -49,7 +49,6 @@ export const partners: Partner[] = [
   { name: "Cequence", url: cequence.url, tone: "light" },
 ];
 
-import anthropicBadge from "@/assets/partners/anthropic-badge.asset.json";
 import automationHub from "@/assets/clients/automation-hub.asset.json";
 import timbro from "@/assets/clients/timbro.asset.json";
 import motz from "@/assets/clients/motz.asset.json";
@@ -120,17 +119,8 @@ export function Partners() {
             tecnologia, automação, inteligência artificial e cibersegurança.
           </p>
         </div>
-
-        <div className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-border bg-white p-4">
-          <img
-            src={anthropicBadge.url}
-            alt="Selo Preferred Services Partner da Claude Partner Network (Anthropic)"
-            loading="lazy"
-            decoding="async"
-            className="h-14 w-auto object-contain"
-          />
-        </div>
       </div>
+
 
       <div className="mt-10 space-y-4">
         <Track items={partners.slice(0, half)} />
@@ -147,7 +137,7 @@ export function Partners() {
 }
 
 export function PartnerMarquee() {
-  const loop = [...partners, ...clients, ...partners, ...clients];
+  const loop = [...clients, ...clients, ...clients, ...clients];
   return (
     <div className="overflow-hidden" aria-hidden="true">
       <div className="animate-marquee flex w-max gap-4 pr-4">
