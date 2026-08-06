@@ -10,6 +10,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { ExecutiveForm } from "@/components/site/ExecutiveForm";
+import { SmartLink } from "@/components/site/SmartLink";
 import { institutionalStats, cases } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -110,7 +111,7 @@ const pillars = [
     icon: ShieldCheck,
     title: "Flar Cyber & Governança",
     text: "Cibersegurança estratégica, governança e inteligência fiscal.",
-    to: "/flar-cyber",
+    to: "https://lp.flar.com.br/",
   },
   {
     icon: Users,
@@ -167,12 +168,14 @@ function Home() {
                 Agendar Reunião Estratégica
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/flar-cyber"
+              <a
+                href="https://lp.flar.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
               >
                 Solicitar Assessoria Gratuita de 1 Hora
-              </Link>
+              </a>
             </div>
             <p className="mt-8 text-xs leading-relaxed text-muted-foreground">
               24+ Anos de Mercado • +6.100 Projetos Entregues • +250 Clientes Atendidos • Parceira
@@ -279,7 +282,7 @@ function Home() {
             {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <Link
+                <SmartLink
                   key={pillar.title}
                   to={pillar.to}
                   className="group flex flex-col rounded-2xl border border-border bg-background p-7 transition-colors hover:border-primary/60"
@@ -295,7 +298,7 @@ function Home() {
                     Conhecer
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                </Link>
+                </SmartLink>
               );
             })}
           </div>

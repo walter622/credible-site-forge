@@ -4,6 +4,7 @@ import { ChevronDown, Menu, Phone } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { solutionGroups, contact } from "@/data/site";
+import { SmartLink } from "@/components/site/SmartLink";
 import logo from "@/assets/logo-flar-branco.png.asset.json";
 
 const primaryLinks = [
@@ -61,7 +62,7 @@ export function Header() {
                       <ul className="space-y-1">
                         {group.items.map((item) => (
                           <li key={item.to}>
-                            <Link
+                            <SmartLink
                               to={item.to}
                               onClick={() => setMega(false)}
                               className="block rounded-lg p-3 transition-colors hover:bg-surface-2"
@@ -70,7 +71,7 @@ export function Header() {
                               <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
                                 {item.description}
                               </span>
-                            </Link>
+                            </SmartLink>
                           </li>
                         ))}
                       </ul>
@@ -123,13 +124,13 @@ export function Header() {
                   <ul className="space-y-1">
                     {group.items.map((item) => (
                       <li key={item.to}>
-                        <Link
+                        <SmartLink
                           to={item.to}
                           onClick={() => setOpen(false)}
                           className="block rounded-md py-2 text-sm font-medium"
                         >
                           {item.title}
-                        </Link>
+                        </SmartLink>
                       </li>
                     ))}
                   </ul>

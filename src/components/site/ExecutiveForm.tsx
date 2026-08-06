@@ -2,23 +2,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Lock } from "lucide-react";
 import { toast } from "sonner";
-
-const roles = ["CEO", "CIO", "CTO", "CFO", "CISO", "Outro"];
-const interests = [
-  "ERPs (SAP / Oracle / Salesforce)",
-  "Hiperautomação & IA",
-  "Flar Cyber",
-  "Alocação de Talentos",
-];
 
 export function ExecutiveForm() {
   const [sending, setSending] = useState(false);
@@ -39,7 +24,7 @@ export function ExecutiveForm() {
       }}
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
+        <div className="space-y-2 sm:col-span-2">
           <Label htmlFor="nome">Nome</Label>
           <Input id="nome" name="nome" required autoComplete="name" />
         </div>
@@ -48,40 +33,11 @@ export function ExecutiveForm() {
           <Input id="email" name="email" type="email" required autoComplete="email" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="empresa">Empresa</Label>
-          <Input id="empresa" name="empresa" required autoComplete="organization" />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="cargo">Cargo</Label>
-          <Select name="cargo">
-            <SelectTrigger id="cargo">
-              <SelectValue placeholder="Selecione" />
-            </SelectTrigger>
-            <SelectContent>
-              {roles.map((role) => (
-                <SelectItem key={role} value={role}>
-                  {role}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="space-y-2 sm:col-span-2">
-          <Label htmlFor="interesse">Solução de interesse</Label>
-          <Select name="interesse">
-            <SelectTrigger id="interesse">
-              <SelectValue placeholder="Selecione" />
-            </SelectTrigger>
-            <SelectContent>
-              {interests.map((item) => (
-                <SelectItem key={item} value={item}>
-                  {item}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <Label htmlFor="telefone">Telefone</Label>
+          <Input id="telefone" name="telefone" type="tel" required autoComplete="tel" />
         </div>
       </div>
+
 
       <Button
         type="submit"

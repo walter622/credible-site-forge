@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, Clock, ShieldCheck } from "lucide-react";
 import { contact, solutionGroups } from "@/data/site";
+import { SmartLink } from "@/components/site/SmartLink";
 import logo from "@/assets/logo-flar-branco.png.asset.json";
 
 const institutional = [
@@ -38,12 +39,12 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5">
             {solutions.map((item) => (
               <li key={item.to}>
-                <Link
+                <SmartLink
                   to={item.to}
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   {item.title}
-                </Link>
+                </SmartLink>
               </li>
             ))}
           </ul>
