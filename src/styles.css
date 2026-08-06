@@ -95,6 +95,17 @@
   }
 }
 
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
 @keyframes rise {
   from {
     opacity: 0;
