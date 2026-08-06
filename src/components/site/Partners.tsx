@@ -49,27 +49,58 @@ export const partners: Partner[] = [
   { name: "Cequence", url: cequence.url, tone: "light" },
 ];
 
-function PartnerTile({ partner }: { partner: Partner }) {
+import anthropicBadge from "@/assets/partners/anthropic-badge.asset.json";
+import automationHub from "@/assets/clients/automation-hub.asset.json";
+import timbro from "@/assets/clients/timbro.asset.json";
+import motz from "@/assets/clients/motz.asset.json";
+import senac from "@/assets/clients/senac.asset.json";
+import gol from "@/assets/clients/gol.asset.json";
+import deloitteClient from "@/assets/clients/deloitte-client.asset.json";
+
+export const clients: Partner[] = [
+  { name: "GOL", url: gol.url, tone: "dark" },
+  { name: "Senac", url: senac.url, tone: "dark" },
+  { name: "Deloitte", url: deloitteClient.url, tone: "dark" },
+  { name: "Timbro", url: timbro.url, tone: "dark" },
+  { name: "Motz", url: motz.url, tone: "dark" },
+  { name: "Automation Hub", url: automationHub.url, tone: "dark" },
+];
+
+function LogoTile({ partner, alt }: { partner: Partner; alt: string }) {
   return (
-    <li
-      className={`flex h-24 items-center justify-center rounded-2xl border p-5 transition-colors ${
-        partner.tone === "light"
-          ? "border-border bg-surface-2 hover:border-primary/50"
-          : "border-border bg-white hover:border-primary/50"
+    <span
+      className={`flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border p-4 ${
+        partner.tone === "light" ? "bg-surface-2" : "bg-white"
       }`}
     >
       <img
         src={partner.url}
-        alt={`Logo ${partner.name}`}
+        alt={alt}
         loading="lazy"
         decoding="async"
-        className="max-h-11 w-auto max-w-[9rem] object-contain"
+        className="max-h-9 w-auto max-w-[7.5rem] object-contain"
       />
-    </li>
+    </span>
+  );
+}
+
+function Track({ items, reverse = false }: { items: Partner[]; reverse?: boolean }) {
+  const loop = [...items, ...items];
+  return (
+    <div className="overflow-hidden" aria-hidden="true">
+      <div
+        className={`flex w-max gap-4 pr-4 ${reverse ? "animate-marquee-reverse" : "animate-marquee"}`}
+      >
+        {loop.map((item, i) => (
+          <LogoTile key={`${item.name}-${i}`} partner={item} alt="" />
+        ))}
+      </div>
+    </div>
   );
 }
 
 export function Partners() {
+  const half = Math.ceil(partners.length / 2);
   return (
     <section
       id="parceiros"
@@ -90,38 +121,41 @@ export function Partners() {
           </p>
         </div>
 
-        <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {partners.map((partner) => (
-            <PartnerTile key={partner.name} partner={partner} />
-          ))}
-        </ul>
+        <div className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-border bg-white p-4">
+          <img
+            src={anthropicBadge.url}
+            alt="Selo Preferred Services Partner da Claude Partner Network (Anthropic)"
+            loading="lazy"
+            decoding="async"
+            className="h-14 w-auto object-contain"
+          />
+        </div>
       </div>
+
+      <div className="mt-10 space-y-4">
+        <Track items={partners.slice(0, half)} />
+        <Track items={partners.slice(half)} reverse />
+      </div>
+
+      <ul className="sr-only">
+        {partners.map((partner) => (
+          <li key={partner.name}>{partner.name}</li>
+        ))}
+      </ul>
     </section>
   );
 }
 
 export function PartnerMarquee() {
-  const loop = [...partners, ...partners];
+  const loop = [...partners, ...clients, ...partners, ...clients];
   return (
     <div className="overflow-hidden" aria-hidden="true">
       <div className="animate-marquee flex w-max gap-4 pr-4">
         {loop.map((partner, i) => (
-          <span
-            key={`${partner.name}-${i}`}
-            className={`flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border p-4 ${
-              partner.tone === "light" ? "bg-surface-2" : "bg-white"
-            }`}
-          >
-            <img
-              src={partner.url}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              className="max-h-9 w-auto max-w-[7.5rem] object-contain"
-            />
-          </span>
+          <LogoTile key={`${partner.name}-${i}`} partner={partner} alt="" />
         ))}
       </div>
     </div>
   );
 }
+
