@@ -26,7 +26,14 @@ export const Route = createFileRoute("/casos-de-sucesso")({
   component: Page,
 });
 
-const filters = ["Todos", "ERPs & Plataformas", "Hiperautomação & IA", "Flar Cyber", "Talentos"];
+const filters = [
+  "Todos",
+  "BU – Inovação",
+  "BU – APPS",
+  "BU – Fábrica de Tecnologias",
+  "Soluções Flar",
+];
+
 
 function Page() {
   const [active, setActive] = useState("Todos");
