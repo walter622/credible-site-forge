@@ -370,19 +370,31 @@ function Home() {
       </section>
 
       {/* Números institucionais */}
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
-        <h2 className="sr-only">Números institucionais de impacto</h2>
-        <dl className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {institutionalStats.map((stat) => (
-            <div key={stat.label} className="rounded-2xl border border-border bg-surface p-7">
-              <dt className="font-display text-3xl font-bold text-primary lg:text-4xl">
-                {stat.value}
-              </dt>
-              <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">{stat.label}</dd>
-            </div>
-          ))}
-        </dl>
+      <section className="hero-surface relative overflow-hidden border-y border-border">
+        <div className="grid-lines pointer-events-none absolute inset-0 opacity-20" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
+          <h2 className="max-w-3xl text-2xl font-bold sm:text-3xl lg:text-4xl">
+            Números que Comprovam Nossa Autoridade
+          </h2>
+          <dl className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {institutionalStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-primary/25 bg-surface/80 p-8 shadow-elevated backdrop-blur-sm transition-colors hover:border-primary/60"
+              >
+                <dt className="font-display text-4xl font-bold leading-none text-primary lg:text-5xl">
+                  {stat.value}
+                </dt>
+                <dd className="mt-4 text-sm leading-relaxed text-muted-foreground">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
+
+      {/* Parceiros estratégicos */}
+      <Partners />
+
 
       {/* BLOCO 7 — CTA final + formulário */}
       <section className="border-t border-border bg-surface">
