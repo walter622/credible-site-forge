@@ -120,17 +120,8 @@ export function Partners() {
             tecnologia, automação, inteligência artificial e cibersegurança.
           </p>
         </div>
-
-        <div className="mt-8 inline-flex items-center gap-4 rounded-2xl border border-border bg-white p-4">
-          <img
-            src={anthropicBadge.url}
-            alt="Selo Preferred Services Partner da Claude Partner Network (Anthropic)"
-            loading="lazy"
-            decoding="async"
-            className="h-14 w-auto object-contain"
-          />
-        </div>
       </div>
+
 
       <div className="mt-10 space-y-4">
         <Track items={partners.slice(0, half)} />
