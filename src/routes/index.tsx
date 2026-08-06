@@ -110,7 +110,7 @@ const pillars = [
     icon: ShieldCheck,
     title: "Flar Cyber & Governança",
     text: "Cibersegurança estratégica, governança e inteligência fiscal.",
-    to: "/flar-cyber",
+    to: "https://lp.flar.com.br/",
   },
   {
     icon: Users,
@@ -167,8 +167,10 @@ function Home() {
                 Agendar Reunião Estratégica
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/flar-cyber"
+              <a
+                href="https://lp.flar.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
               >
                 Solicitar Assessoria Gratuita de 1 Hora

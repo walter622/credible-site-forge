@@ -50,7 +50,7 @@ export const solutionGroups: { group: string; items: SolutionLink[] }[] = [
     items: [
       {
         title: "Flar Cyber",
-        to: "/flar-cyber",
+        to: "https://lp.flar.com.br/",
         description: "Cibersegurança estratégica, vulnerabilidades e SecOps.",
       },
       {
