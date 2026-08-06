@@ -219,21 +219,14 @@ function Home() {
       {/* BLOCO 2 — Barra institucional */}
       <section className="border-y border-border bg-surface py-10">
         <h2 className="mx-auto max-w-7xl px-5 text-center text-sm text-muted-foreground lg:px-8">
-          Experiência comprovada em projetos de alta complexidade para médias e grandes empresas
+          Experiência comprovada em projetos de alta complexidade para médias e grandes empresas em{" "}
+          {sectors.join(", ")}
         </h2>
-        <div className="mt-7 overflow-hidden" aria-hidden="true">
-          <div className="animate-marquee flex w-max gap-14 pr-14">
-            {[...sectors, ...sectors, ...sectors, ...sectors].map((sector, i) => (
-              <span
-                key={`${sector}-${i}`}
-                className="font-display text-lg font-semibold uppercase tracking-[0.2em] text-muted-foreground/70"
-              >
-                {sector}
-              </span>
-            ))}
-          </div>
+        <div className="mt-7">
+          <PartnerMarquee />
         </div>
       </section>
+
 
       {/* BLOCO 3 — Matriz de desafios */}
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
