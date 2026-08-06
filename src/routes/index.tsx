@@ -346,21 +346,26 @@ function Home() {
             {cases.map((item) => (
               <article
                 key={item.title}
-                className="w-[86vw] shrink-0 snap-start rounded-2xl border border-border bg-background p-7 sm:w-[24rem] lg:w-auto"
+                className="flex w-[86vw] shrink-0 snap-start flex-col rounded-2xl border border-border bg-background p-7 transition-colors hover:border-primary/50 sm:w-[24rem] lg:w-auto"
               >
-                <span className="w-fit rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                <span className="flex h-14 w-32 items-center justify-center rounded-xl bg-white p-3">
+                  <img
+                    src={item.logo}
+                    alt={`Logo ${item.client}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="max-h-8 w-auto max-w-[6.5rem] object-contain"
+                  />
+                </span>
+                <span className="mt-5 w-fit rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   {item.category}
                 </span>
-                <h3 className="mt-5 text-lg font-semibold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {item.challenge}
-                </p>
-                <p className="mt-4 text-sm font-medium leading-relaxed text-primary">
-                  {item.result}
-                </p>
+                <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
               </article>
             ))}
           </div>
+
         </div>
       </section>
 
