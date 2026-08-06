@@ -23,8 +23,8 @@ export function ExecutiveForm() {
         }, 600);
       }}
     >
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2 sm:col-span-2">
+      <div className="flex flex-col gap-5">
+        <div className="space-y-2">
           <Label htmlFor="nome">Nome</Label>
           <Input id="nome" name="nome" required autoComplete="name" />
         </div>
