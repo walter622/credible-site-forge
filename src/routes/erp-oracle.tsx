@@ -287,6 +287,9 @@ function Page() {
       ctaTitle="Maximize o Valor do Seu Investimento em Tecnologia Oracle"
       ctaSubtitle="Fale com nossa equipe e receba uma análise detalhada sobre como otimizar seu ambiente."
       ctaLabel="Solicitar Contato Especializado"
-    />
+    >
+      <OracleLines />
+    </SolutionPage>
+
   );
 }
