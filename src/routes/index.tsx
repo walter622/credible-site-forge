@@ -10,6 +10,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { ExecutiveForm } from "@/components/site/ExecutiveForm";
+import { SmartLink } from "@/components/site/SmartLink";
 import { institutionalStats, cases } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -281,7 +282,7 @@ function Home() {
             {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <Link
+                <SmartLink
                   key={pillar.title}
                   to={pillar.to}
                   className="group flex flex-col rounded-2xl border border-border bg-background p-7 transition-colors hover:border-primary/60"
@@ -297,7 +298,7 @@ function Home() {
                     Conhecer
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                </Link>
+                </SmartLink>
               );
             })}
           </div>
