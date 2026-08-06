@@ -44,7 +44,7 @@ export const partners: Partner[] = [
   { name: "Simetrik", url: simetrik.url, tone: "dark" },
   { name: "Xcitium", url: xcitium.url, tone: "dark" },
   { name: "Proofpoint", url: proofpoint.url, tone: "light" },
-  { name: "Snyk", url: snyk.url, tone: "light" },
+  { name: "Snyk", url: snyk.url, tone: "dark" },
   { name: "eTrust", url: etrust.url, tone: "light" },
   { name: "Cequence", url: cequence.url, tone: "light" },
 ];
