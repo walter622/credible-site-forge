@@ -328,9 +328,9 @@ interface FieldProps {
   inputMode?: "email" | "tel";
   placeholder: string;
   value: string;
-  error?: string;
+  error?: string | undefined;
   autoComplete: string;
-  support?: string;
+  support?: string | undefined;
   onChange: (value: string) => void;
   onBlur: (event: FocusEvent<HTMLInputElement>) => void;
 }
