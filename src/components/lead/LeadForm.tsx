@@ -113,7 +113,7 @@ interface LeadFormProps {
 }
 
 export function LeadForm({ id, footerText, compact = false }: LeadFormProps) {
-  const loadedAt = useRef(Date.now());
+  const [loadedAt, setLoadedAt] = useState(0);
   const started = useRef(false);
   const [values, setValues] = useState<Record<FieldName, string>>({
     nome: "",
@@ -126,6 +126,7 @@ export function LeadForm({ id, footerText, compact = false }: LeadFormProps) {
   const [submitError, setSubmitError] = useState("");
 
   useEffect(() => {
+    setLoadedAt(Date.now());
     const params = new URLSearchParams(window.location.search);
     const captured: Record<string, string> = {};
     TRACKING_FIELDS.forEach((field) => {
@@ -189,7 +190,7 @@ export function LeadForm({ id, footerText, compact = false }: LeadFormProps) {
     payload.set("whatsapp", values.whatsapp);
     payload.set("email", values.email.trim().toLowerCase());
     payload.set("observacao_interna", "");
-    payload.set("form_loaded_at", String(loadedAt.current));
+    payload.set("form_loaded_at", String(loadedAt));
     Object.entries(tracking).forEach(([key, value]) => payload.set(key, value));
 
     setSubmitting(true);
@@ -250,7 +251,7 @@ export function LeadForm({ id, footerText, compact = false }: LeadFormProps) {
           autoComplete="off"
         />
       </div>
-      <input type="hidden" name="form_loaded_at" value={loadedAt.current} />
+      <input type="hidden" name="form_loaded_at" value={loadedAt} readOnly />
       {TRACKING_FIELDS.map((field) => (
         <input key={field} type="hidden" name={field} value={tracking[field] || ""} />
       ))}
