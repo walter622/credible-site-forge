@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {
   Bot,
   Check,
-  CheckCircle2,
   Clipboard,
   Play,
   Plug,
@@ -94,17 +93,18 @@ function Vsl() {
             allowFullScreen
           />
         ) : (
-          <button
+          <Button
             type="button"
             onClick={() => setLoaded(true)}
-            className="flex h-full w-full cursor-pointer flex-col items-center justify-center gap-4 text-foreground transition-colors hover:bg-surface-2"
+            variant="ghost"
+            className="flex h-full w-full cursor-pointer flex-col items-center justify-center gap-4 rounded-none text-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
             aria-label="Reproduzir vídeo"
           >
             <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Play className="ml-1 h-7 w-7 fill-current" />
             </span>
             <span className="text-base font-semibold">Vídeo em breve</span>
-          </button>
+          </Button>
         )}
       </div>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
