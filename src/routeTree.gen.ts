@@ -18,6 +18,7 @@ import { Route as ErpSapRouteImport } from './routes/erp-sap'
 import { Route as FlarCyberRouteImport } from './routes/flar-cyber'
 import { Route as GovernancaEFiscalRouteImport } from './routes/governanca-e-fiscal'
 import { Route as HiperautomacaoRouteImport } from './routes/hiperautomacao'
+import { Route as ObrigadoRouteImport } from './routes/obrigado'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as QuemSomosRouteImport } from './routes/quem-somos'
 import { Route as SalesforceRouteImport } from './routes/salesforce'
@@ -69,6 +70,11 @@ const HiperautomacaoRoute = HiperautomacaoRouteImport.update({
   path: '/hiperautomacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObrigadoRoute = ObrigadoRouteImport.update({
+  id: '/obrigado',
+  path: '/obrigado',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   id: '/politica-de-privacidade',
   path: '/politica-de-privacidade',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/flar-cyber': typeof FlarCyberRoute
   '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
   '/hiperautomacao': typeof HiperautomacaoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/salesforce': typeof SalesforceRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/flar-cyber': typeof FlarCyberRoute
   '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
   '/hiperautomacao': typeof HiperautomacaoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/salesforce': typeof SalesforceRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/flar-cyber': typeof FlarCyberRoute
   '/governanca-e-fiscal': typeof GovernancaEFiscalRoute
   '/hiperautomacao': typeof HiperautomacaoRoute
+  '/obrigado': typeof ObrigadoRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/quem-somos': typeof QuemSomosRoute
   '/salesforce': typeof SalesforceRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/flar-cyber'
     | '/governanca-e-fiscal'
     | '/hiperautomacao'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/quem-somos'
     | '/salesforce'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/flar-cyber'
     | '/governanca-e-fiscal'
     | '/hiperautomacao'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/quem-somos'
     | '/salesforce'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/flar-cyber'
     | '/governanca-e-fiscal'
     | '/hiperautomacao'
+    | '/obrigado'
     | '/politica-de-privacidade'
     | '/quem-somos'
     | '/salesforce'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   FlarCyberRoute: typeof FlarCyberRoute
   GovernancaEFiscalRoute: typeof GovernancaEFiscalRoute
   HiperautomacaoRoute: typeof HiperautomacaoRoute
+  ObrigadoRoute: typeof ObrigadoRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   QuemSomosRoute: typeof QuemSomosRoute
   SalesforceRoute: typeof SalesforceRoute
@@ -278,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HiperautomacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/obrigado': {
+      id: '/obrigado'
+      path: '/obrigado'
+      fullPath: '/obrigado'
+      preLoaderRoute: typeof ObrigadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/politica-de-privacidade': {
       id: '/politica-de-privacidade'
       path: '/politica-de-privacidade'
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   FlarCyberRoute: FlarCyberRoute,
   GovernancaEFiscalRoute: GovernancaEFiscalRoute,
   HiperautomacaoRoute: HiperautomacaoRoute,
+  ObrigadoRoute: ObrigadoRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   QuemSomosRoute: QuemSomosRoute,
   SalesforceRoute: SalesforceRoute,
